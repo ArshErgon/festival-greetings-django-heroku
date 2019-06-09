@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width", initial-scale="1.0">
+    <link rel="stylesheet" href="{% static 'holi/css/style.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Satisfy&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kalam&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'button/button.css' %}">
+    <title></title>
+  </head>
+  <body>
+    <h1 class="greeter_name_h1">{{ name|upper }} wishes you,</h1><br>
+      <img style="position: relative;" src="{% static 'holi/gifs/holi_2.gif' %}" width="100%" height="auto" />
+      <hr>
+
+      <div class="jumbotron">
+        <center>
+          {% if share_link %}
+            <h2 class="make_your_own">Share on</h2>
+
+            <a href="https://api.whatsapp.com/send?text={{ share_link }}"><i class="fa fa-whatsapp" style="font-size:48px;color:green;"></i></a>
+          {% endif %}
+        <h1 class="make_your_own">Make your own. </h1>
+        <form class="" action="{% url 'holi:holi_home' %}" method="post">{% csrf_token %}
+          <p>{{ add_greeter_form }}</p>
+          <input  class="bubbly-button" type="submit" name="" value="Enter">
+        </form>
+
+      </center>
+      </div>
+      <hr>
+      <div class="container">
+        <img src="{% static 'holi/images/holi1.jpg' %}" />
+        <p class="info">{{ text1 }}</p>
+        <img src="{% static 'holi/images/holi2.jpg' %}" />
+        <p class="info">{{ text2 }}</p>
+      </div><br><br><br>
+  </body>
+
+</html>

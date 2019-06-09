@@ -1,0 +1,54 @@
+body {
+  background: linear-gradient(to right, lightyellow, violet);
+}
+
+.greeter_name_h1 {
+  padding-top: 10px;
+  text-align: center;
+  box-shadow: 20px 30px 30px;
+  font-family: "Satisfy", cursive;
+  font-size: 2.5em;
+}
+
+hr {
+  position: inherit;
+  color: black;
+  padding: 4px;
+  background-color: black;
+  border-radius: 20px;
+}
+.jumbotron {
+  position: relative;
+  margin: 20px 30px 20px 10px;
+  background-color: #E8CAC4;
+  border-radius: 20px;
+  padding: 20px 30px 40px 10px;
+}
+
+.make_your_own {
+  text-align: center;
+  font-family: "Permanent Marker", cursive;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  border: 5px solid lightgreen;
+}
+
+.info {
+  font-family: 'Kalam', cursive;
+  font-size: 17px;
+  font-weight: bolder;
+}
+
+.footer {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(900, 0, 0);
+  color: white;
+  text-align: center;
+}

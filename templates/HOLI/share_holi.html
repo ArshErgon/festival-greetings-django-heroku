@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width", initial-scale="1.0">
+    <link rel="stylesheet" href="{% static 'holi/css/style.css' %}" />
+    <link href="https://fonts.googleapis.com/css?family=Satisfy&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kalam&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'button/button.css' %}">
+    <title></title>
+  </head>
+  <body>
+    <h1 class="greeter_name_h1">{{ show_share_name|upper }} wishes you,</h1><br>
+      <img style="position: relative;" src="{% static 'holi/gifs/holi_2.gif' %}" width="100%" height="auto" />
+      <hr>
+
+
+      <div class="jumbotron">
+        <center>
+        <h1 class="make_your_own">Make your own.</h1>
+        <form class="" action="{% url 'holi:holi_home' %}" method="post">{% csrf_token %}
+          <p>{{ add_greeter_form }}</p>
+          <input class="bubbly-button" type="submit" name="" value="Enter">
+        </form>
+      </center>
+      </div>
+      <hr>
+      <div class="container">
+        <img src="{% static 'holi/images/holi1.jpg' %}" />
+        <p class="info">{{ text1 }}</p>
+        <img src="{% static 'holi/images/holi2.jpg' %}" />
+        <p class="info">{{ text2 }}</p>
+      </div><br><br><br>
+  </body>
+  
+</html>

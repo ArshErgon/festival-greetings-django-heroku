@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width", initial-scale="1.0">
+    <link href="https://fonts.googleapis.com/css?family=Satisfy&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kalam&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'DIWALI/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'button/button.css' %}">
+    <title></title>
+  </head>
+  <body>
+    <h1 class="greeter_name">{{ share_name|upper }}  wishes you,</h1>
+      <img src="{% static 'DIWALI/gifs/giphy.gif' %}" width="100%" height="auto"/>
+      <hr>
+      
+
+      <div class="container">
+        <h1 class="make_your_own">Make your own.</h1><center>
+        <form class="" action="{% url 'diwali:diwali_home' %}" method="post">{% csrf_token %}
+          <p style="form">{{ greeter_form }}</p>
+          <input  class="bubbly-button" type="submit" name="" value="Enter">
+        </form></center>
+      </div>
+      <hr>
+      <h1 class="diwali_picture">Diwali's Pictures</h1>
+
+        <img class="image-container" src="{% static 'DIWALI/gifs/diwali.gif' %}" />
+        <p class="description">{{ text1 }}</p>
+        <img  class="image-container" src="{% static 'DIWALI/images/city.jpg' %}" width="100%" height="auto">
+        <p class="description">{{ text2 }}</p>
+
+  </body>
+</html>

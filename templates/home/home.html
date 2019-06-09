@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width", initial-scale="1.0">
+    <link href="https://fonts.googleapis.com/css?family=Tangerine&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'home/style.css' %}">
+    <title></title>
+  </head>
+  <body><br>
+    <b><h1 class="welcome_note">Welcome to Festival Greeting.</h1></b>
+    <div class="container">
+      <div class="jumbotron">
+        <h1 class="festivals">Festivals</h1><br>
+        <p>1. <a href="{% url 'holi:holi_home' %}">Holi</p></a>
+        <p>2. <a href="{% url 'ramadan:ramadan_home' %}">Ramadan</p></a>
+        <p>3. <a href="{% url 'eid_al_fitr:eid_al_fitr_home' %}">EID-Al-Fitr</p></a>
+        <p>4. <a href="{% url 'diwali:diwali_home' %}">Diwali</p></a>
+        <p>5. <a href="{% url 'eid_al_adha:eid_al_adhar_home' %}">EID-Al-Adha</p></a>
+      </div>
+    </div>
+  </body>
+  {% include 'footer.html' %}
+</html>

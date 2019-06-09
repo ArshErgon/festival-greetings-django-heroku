@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width", initial-scale="1.0">
+    <link rel="stylesheet" href="{% static 'ramadan/css/style.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Satisfy&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kalam&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'button/button.css' %}">
+    <title></title>
+  </head>
+  <body>
+    <h1 class="show_greeter_name">{{ target_name|upper }} wishes you,</h1><br>
+    <video autoplay width="100%" height="auto">
+      <source src="{% static 'ramadan/video/ramadan.mp4' %}" type="video/mp4">
+    </video>
+
+    <h1 class="make_own_greeting">Make your own.</h1>
+    <form class="" action="{% url 'ramadan:ramadan_home' %}" method="post">{% csrf_token %}
+      <center>{{ greeter_form }}<br>
+      <input type="submit" name="" value="submit" class="bubbly-button">
+      </center>
+    </form>
+    <hr><br>
+    <h1 class="ramadan_heading">Ramadan's Images.</h1>
+    <div class="image-container">
+      <img class="ramadan_image" src="{% static 'ramadan/images/ramadan_back2.jpg' %}" />
+      <p class="message_for_umah">{{ text1|safe }}</p>
+      <img class="ramadan_image" src="{% static 'ramadan/images/ramadan_back3.jpg' %}" />
+      <p class="message_for_umah">{{ text1|safe }}</p>
+
+      <div class="line_break"></div>
+    </div>
+  </body>
+  <div class="footer">
+    <p>Built with ❤ by <a href="#"><span>ArshErgon</span></a></p>
+    <p>Images: <a href="https://pexels.com"><span>Pexels</span></a></p>
+  </div>
+</html>

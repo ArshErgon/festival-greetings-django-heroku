@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width", initial-scale="1.0">
+    <link rel="stylesheet" href="{% static 'eid_al_adha/css/style.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Satisfy&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kalam&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Satisfy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'button/button.css' %}">
+    <link rel="stylesheet" href="{% static 'button/button.css' %}">
+    <title></title>
+  </head>
+  <body>
+    <h1 class="greeter_name">{{ show_greeter_name|upper }} wishes you,</h1><br>
+    <img src="{% static 'eid_al_adha/gifs/main.gif' %}" width="100%" height="auto">
+    <hr>
+
+
+    <div class="jumbotron">
+      <h1 class="make_your_own">Make you own.</h1>
+      <center>
+        <form class="" action="{% url 'eid_al_adha:eid_al_adhar_home' %}" method="post">{% csrf_token %}
+        {{ bakra_form }}
+        <input class="bubbly-button" type="submit" name="" value="Enter">
+      </form>
+    </center>
+    </div>
+    <hr>
+    <h2 class="eid_picture_heading">Eid's Pictures</h2>
+    <div class="image-container">
+      <img src="{% static 'eid_al_adha/images/cute_goat.jpg' %}" width="100%" height="auto">
+      <p class="hindi-text">{{ text1|safe }}</p>
+    </div>
+    <div class="image-container">
+      <img src="{% static 'eid_al_adha/images/Eid_Al-Adha-512.png' %}" alt="">
+      <p class="hindi-text">{{ text1|safe }}</p>
+    </div>
+  </body>
+
+</html>

@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta width=device-width initial-scale=1/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Courgette&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Satisfy&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kalam&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'eid_al_fitr/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'button/button.css' %}">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width", initial-scale="1.0">
+    <title></title>
+  </head>
+  <body>
+    <h1 class="show_greeter_name">{{ name|upper }} wishes you</h1>
+    <video  autoplay width="100%" height="auto">
+      <source src="{% static 'eid_al_fitr/video/eidmubarak.mp4' %}" type="video/mp4"></source>
+    </video>
+    <hr>
+
+
+    <div class="jumbotron">
+      <center>
+      {% if  share_link %}
+        <h2 class="make_your_own">Share on</h2>
+
+        <a href="https://api.whatsapp.com/send?text={{ share_link }}"><i class="fa fa-whatsapp" style="font-size:48px;color:green;"></i></a>
+      {% endif %}
+      <h2 class="make_more">Make your own.</h2>
+
+      <form class="" action="{% url 'eid_al_fitr:eid_al_fitr_home' %}" method="post">{% csrf_token %}
+        {{ eid_form }}
+        <input type="submit" name="" value="Submit" class="bubbly-button">
+      </form>
+
+      </center>
+    </div>
+    <hr>
+    <h2 class="eid_picture_heading">Eid's Pictures</h2>
+    <div class="image-container">
+      <img src="{% static 'eid_al_fitr/images/eid1.jpg' %}" width="100%" height="auto"/>
+    </div>
+    <p class="eid_description">{{ text1|default:"हिन्दी" }}</p>
+    <div class="image-container">
+      <img src="{% static 'eid_al_fitr/images/eid2.jpg' %}" width="100%" height="auto"/>
+    </div>
+    <p class="eid_description">{{ text2|default:"हिन्दी" }}</p>
+
+    <div class="line_break"></div>
+  </body>
+</html>
